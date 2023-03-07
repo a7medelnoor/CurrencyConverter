@@ -23,8 +23,12 @@ class CurrencyConverterViewModel @Inject constructor(
     fun getCurrency() {
 
         viewModelScope.launch {
+            Log.e("v Currencies", _currencies.value.toString())
+
             try {
                 _currencies.value = getCurrencyUseCase()
+                Log.e("v Currencies", _currencies.value.toString())
+
             } catch (e: java.lang.Exception) {
                 Log.e("CurrencyViewModel", e.message.toString())
             }
