@@ -43,19 +43,18 @@ class MainActivity : AppCompatActivity() {
     private fun observeUI() {
         lifecycleScope.launch {
             currencyViewModel.currency.collect {
-                var rateFromAmount = it?.rates
-                binding.fromTextView.text = it.toString()
+//                var rateFromAmount = it?.rates
+//                binding.fromTextView.text = it.toString()
             }
         }
     }
 
     private fun initSpinner() {
-
-        val spinnerFrom = binding.spinnerFrom
-        spinnerFrom.setItems(setSpinnerData())
-        spinnerFrom.setOnItemSelectedListener { view, position, id, item ->
-        }
-        val spinnerTo = binding.spinnerTo
+//        val spinnerFrom = binding.spinnerFrom
+//        spinnerFrom.setItems(setSpinnerData())
+//        spinnerFrom.setOnItemSelectedListener { view, position, id, item ->
+//        }
+//        val spinnerTo = binding.spinnerTo
 
     }
 
