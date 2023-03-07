@@ -9,7 +9,7 @@ import com.a7medelnoor.currencyconverter.data.model.Rates
 @Dao
 interface CurrencyDao {
 
-    @Query("Select * from random_user")
+    @Query("Select * from currency")
     fun getAllCurrencies(): List<Rates>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
