@@ -18,8 +18,9 @@ object NetworkModule {
 
 
     // provide ok http
-    @Singleton
+
     @Provides
+    @Singleton
     fun provideOkHttp(): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(20, TimeUnit.SECONDS)
@@ -29,11 +30,11 @@ object NetworkModule {
 
 
     // provide retrofit
-    @Singleton
     @Provides
+    @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl("https://open.er-api.com/v6/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -42,6 +43,7 @@ object NetworkModule {
 
     // provide api service
     @Provides
+    @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
