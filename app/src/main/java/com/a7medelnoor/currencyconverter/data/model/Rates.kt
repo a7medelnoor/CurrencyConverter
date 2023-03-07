@@ -1,6 +1,11 @@
 package com.a7medelnoor.currencyconverter.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "currency")
 data class Rates(
+    @PrimaryKey(autoGenerate = false)
     val AED: Double,
     val AFN: Double,
     val ALL: Double,
